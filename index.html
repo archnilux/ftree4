@@ -1,0 +1,89 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Family Tree</title>
+  <!-- Hiyerarşi & connector çizgileri -->
+  <link href="https://unpkg.com/treeflex/dist/css/treeflex.css" rel="stylesheet">
+  <!-- Kendi stillerimiz -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tf-tree tf-gap-lg">
+    <ul>
+      <li>
+        <div class="couple">
+          <div class="card female">
+            <strong>Suna Ahıskalı</strong>
+            <small>Born 1925</small>
+          </div>
+          <div class="card male">
+            <strong>Ahmet Ahıskalı</strong>
+            <small>Born 1920</small>
+          </div>
+        </div>
+
+        <!-- Kök branch toggle -->
+        <input id="t-root" class="toggle-cb" type="checkbox">
+        <label class="toggle" for="t-root"></label>
+
+        <ul>
+          <li>
+            <div class="couple">
+              <div class="card female"><strong>Suna Ahıskalı</strong></div>
+              <div class="card male"><strong>Bahri Ahıskalı</strong><small>Born 1941</small></div>
+            </div>
+
+            <input id="t-suna-bahri" class="toggle-cb" type="checkbox">
+            <label class="toggle" for="t-suna-bahri"></label>
+
+            <ul>
+              <li>
+                <div class="couple">
+                  <div class="card male"><strong>Asaf Ahıskalı</strong><small>Born 1980</small></div>
+                  <div class="card female"><strong>Eşi</strong></div>
+                </div>
+
+                <input id="t-asaf" class="toggle-cb" type="checkbox">
+                <label class="toggle" for="t-asaf"></label>
+
+                <ul>
+                  <li>
+                    <div class="card female">
+                      <strong>Eda Ahıskalı</strong>
+                      <small>Born 2003</small>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="card female">
+                      <strong>Ela Ahıskalı</strong>
+                      <small>Born 2006</small>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Buraya aynı kalıpla diğer kardeşleri ekleyebilirsin -->
+            </ul>
+          </li>
+
+          <li>
+            <div class="couple">
+              <div class="card female"><strong>Zarife Tuğyiken</strong><small>Born 1947</small></div>
+              <div class="card male"><strong>Zarif Tuğyiken</strong><small>Born 1945</small></div>
+            </div>
+
+            <input id="t-zarife-zarif" class="toggle-cb" type="checkbox">
+            <label class="toggle" for="t-zarife-zarif"></label>
+
+            <ul>
+              <!-- Bu çiftin çocuklarını aynı kalıpla burada açarsın -->
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
