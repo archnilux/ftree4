@@ -1,0 +1,54 @@
+/* style.css */
+/* Renkler ve temel görünüm */
+:root{
+  --male:#c9d7ff;
+  --female:#ffd0df;
+  --card-border:#5b5b5b;
+  --btn-bg:#fff;
+  --btn-border:#4b4b4b;
+  --btn-text:#222;
+}
+
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:40px}
+
+/* Kişi kartları */
+.card{
+  min-width:140px;
+  max-width:160px;
+  text-align:center;
+  padding:10px 12px;
+  border:1.5px solid var(--card-border);
+  border-radius:10px;
+  box-shadow:0 2px 4px rgba(0,0,0,.06);
+}
+.card small{display:block;opacity:.75;margin-top:4px;font-size:.8rem}
+.card.male{background:var(--male)}
+.card.female{background:var(--female)}
+
+/* Çiftleri yan yana göster */
+.couple{display:flex;gap:10px;justify-content:center;align-items:flex-start}
+
+/* Toggle mekanizması (saf HTML+CSS) */
+.toggle-cb{display:none}
+.toggle{
+  display:inline-block;
+  margin:10px auto 0;
+  padding:8px 14px;
+  border:1.5px solid var(--btn-border);
+  background:var(--btn-bg);
+  color:var(--btn-text);
+  border-radius:6px;
+  cursor:pointer;
+  user-select:none;
+  font-weight:600;
+}
+.toggle-cb + .toggle::after{content:"Show Children"}
+.toggle-cb:checked + .toggle::after{content:"Hide Children"}
+
+/* Alt çocukları, toggle işaretli değilse gizle */
+.toggle-cb ~ ul{display:none}
+.toggle-cb:checked ~ ul{display:block}
+
+/* Treeflex ile uyumlu ufak düzeltmeler */
+.tf-tree ul{padding-top:14px}
+.tf-tree li{padding:12px 10px 0 10px}
